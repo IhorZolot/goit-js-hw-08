@@ -14,13 +14,5 @@ iframePlayer.on(
   }, 1000)
 );
 
-// const savedTime = localStorage.getItem(STORAGE_KEY);
-// const currentTime = savedTime;
-// if (currentTime) {
-//   iframePlayer.setCurrentTime(currentTime);
-// }
-
-// Який з цих двох методів більш правильний я не знаю працювало і так і так! Але в прикладі з if
-
-const savedTime = localStorage.getItem(STORAGE_KEY);
-iframePlayer.setCurrentTime(savedTime) || {};
+const savedTime = parseFloat(localStorage.getItem(STORAGE_KEY)) || 0;
+iframePlayer.setCurrentTime(savedTime);
